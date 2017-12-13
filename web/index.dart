@@ -1,17 +1,44 @@
+import 'dart:async';
+import 'dart:convert';
 import 'dart:html';
-import 'dart:math' as math;
-void main() {
-  querySelector('#sample_text_id')
-    ..text = 'Click me!'
-    ..onClick.listen(reverseText);
+import 'package:http/browser_client.dart';
+
+main() async {
+  querySelector('#getData').onClick.listen(makeRequest);
+  querySelector('#postData').onClick.listen(makePostRequest);
+
+  wordList = querySelector('#wordList');
 }
-void reverseText(MouseEvent event) {
-  var text = querySelector('#sample_text_id').text;
-  var buffer = new StringBuffer();
-  for (int i = text.length - 1; i >= 0; i--) {
-    buffer.write(text[i]);
+
+var wordList;
+
+void handleError(Object error) {
+  wordList.children.add(new LIElement()..text = 'Request failed.');
+}
+
+Future makeRequest(Event e) async {
+  var path = 'http://localhost:90/data/';
+  try {
+    processString(await HttpRequest.getString(path));
+  } catch (e) {
+    print('Couldn\'t open $path');
+    handleError(e);
   }
-  querySelector('#sample_text_id').text = buffer.toString();
-  //我做了点修改
-  querySelector("#sample_text_id").text="new text000000";
+}
+
+void processString(String jsonString) {
+  List<String> portmanteaux = JSON.decode(jsonString) as List<String>;
+  for (int i = 0; i < portmanteaux.length; i++) {
+    wordList.children.add(new LIElement()..text = portmanteaux[i]);
+  }
+}
+
+Future makePostRequest(Event e) async {
+  String url = 'http://localhost:90/data/add';
+  HttpRequest
+      .request(url, method: 'POST', sendData: '''{'user':'zhangsan'}''')
+      .then((HttpRequest resp) {
+    // Do something with the response.
+    querySelector('#response').text = resp.responseText;
+  });
 }

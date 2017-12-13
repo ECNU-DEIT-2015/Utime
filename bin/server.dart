@@ -12,7 +12,14 @@ getdata() {
   return getDataFromDB();
 }
 
-getDataFromDB(){
+@app.Route("data/add",methods: const [app.POST])
+addUser(@app.Body(app.TEXT) String userDate){
+  String data = userDate;
+  return data;
+}
+
+
+String getDataFromDB(){
   //to get data from DB.
   return '''["name1","name2","name3","name4"]''';
 }
