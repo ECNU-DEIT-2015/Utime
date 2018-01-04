@@ -1,179 +1,46 @@
-var http = require('http')
-var fs = require('fs')
-var server = http.createServer()
+var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
-server.on('request',function(req,res){
-     // res.end('hello world')
-     // 1.通过req.url拿到当前请求路径
-     var url = req.url
+var index = require('./routes/index');
+var users = require('./routes/users');
 
-     //2.根据不同的请求路径，处理不同的响应
-    if(url === '/'){
-        //res.writeHead(响应状态码，响应头对象)
-     	res.writeHead(200,{
-     		'Content-Type':'text/html'
-     	})
-        fs.readFile('index.html','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-        })
-     }else if(url === '/css/main.css'){
-        res.writeHead(200,{
-            'Content-Type':'text/css'
-        })
-        fs.readFile('./css/main.css','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-        })
-      }else if(url === '/css/alert.css'){
-        res.writeHead(200,{
-            'Content-Type':'text/css'
-        })
-        fs.readFile('./css/alert.css','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-            })
-        }else if(url === '/css/blackbird.css'){
-        res.writeHead(200,{
-            'Content-Type':'text/css'
-        })
-        fs.readFile('./css/blackbird.css','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-            })
-        }else if(url === '/css/calendar.css'){
-        res.writeHead(200,{
-            'Content-Type':'text/css'
-        })
-        fs.readFile('./css/calendar.css','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-            })
-         }else if(url === '/css/dailog.css'){
-        res.writeHead(200,{
-            'Content-Type':'text/css'
-        })
-        fs.readFile('./css/dailog.css','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-            })
-        }else if(url === '/css/dp.css'){
-        res.writeHead(200,{
-            'Content-Type':'text/css'
-        })
-        fs.readFile('./css/dp.css','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-        })
-     }else if(url === '/js/blackbird.js'){
-        res.writeHead(200,{
-            'Content-Type':'text/javascript'
-        })
-        fs.readFile('./js/blackbird.js','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-        })
-      }else if(url === '/js/Common.js'){
-        res.writeHead(200,{
-            'Content-Type':'text/javascript'
-        })
-        fs.readFile('./js/Common.js','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-            })
-        }else if(url === '/js/datepicker_lang_zh_CN.js'){
-        res.writeHead(200,{
-            'Content-Type':'text/javascript'
-        })
-        fs.readFile('./js/datepicker_lang_zh_CN.js','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-            })
-    }else if(url === '/js/jquery.alert.js'){
-        res.writeHead(200,{
-            'Content-Type':'text/javascript'
-        })
-        fs.readFile('./js/jquery.alert.js','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-            })
-        }else if(url === '/js/jquery.datepicker.js'){
-        res.writeHead(200,{
-            'Content-Type':'text/javascript'
-        })
-        fs.readFile('./js/jquery.datepicker.js','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-            })
-         }else if(url === '/js/jquery.ifrmdailog.js'){
-        res.writeHead(200,{
-            'Content-Type':'text/javascript'
-        })
-        fs.readFile('./js/jquery.ifrmdailog.js','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-            })
-        }else if(url === '/js/jquery.min.js'){
-        res.writeHead(200,{
-            'Content-Type':'text/javascript'
-        })
-        fs.readFile('./js/jquery.min.js','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-        })
-    }else if(url === '/js/xgcalendar.js?v=1.2.0.4'){
-        res.writeHead(200,{
-            'Content-Type':'text/javascript'
-        })
-        fs.readFile('./js/xgcalendar.js','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-        })
-        }else if(url === '/js/xgcalendar_lang_zh_CN.js'){
-        res.writeHead(200,{
-            'Content-Type':'text/javascript'
-        })
-        fs.readFile('./js/xgcalendar_lang_zh_CN.js','utf8',function(err,data){
-            if(err){
-                throw err
-            }
-            res.end(data)
-        })
-     }else{
-        res.end('404 Not Found.')
-     }
-})
+var app = express();
 
-server.listen(3000,function(){
-	console.log('running...')
-})
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/', index);
+app.use('/users', users);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+module.exports = app;
