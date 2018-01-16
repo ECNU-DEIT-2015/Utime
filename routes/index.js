@@ -15,18 +15,19 @@ router.route('/login')
     .post(function(req, res) {
         client=usr.connect();
         result=null;
-        usr.selectFun(client,req.body.username, function (result) {
+        usr.selectFun(client,req.body.user_name, function (result) {
             if(result[0]===undefined){
                 res.send('没有该用户');
             }else{
-                if(result[0].password===req.body.password){
-                    req.session.islogin=req.body.username;
+                if(result[0].user_psd===req.body.user_psd){
+                    req.session.islogin=req.body.user_name;
                     res.locals.islogin=req.session.islogin;
                     res.cookie('islogin',res.locals.islogin,{maxAge:60000});
-                    res.redirect('/home');
+                    res.sendfile("./views/home.html");
+                    //res.redirect('home');
                 }else
                 {
-                    res.redirect('/login');
+                    res.redirect('login');
                 }
                }
         });
@@ -55,9 +56,11 @@ router.route('/reg')
     .post(function(req,res) {
         client = usr.connect();
 
-        usr.insertFun(client,req.body.username ,req.body.password2, function (err) {
+        usr.insertFun(client,req.body.user_name ,req.body.user_psd, function (err) {
               if(err) throw err;
               res.send('注册成功');
+              res.sendfile("./views/login.html");
+              //res.redirect('login');
         });
     });
 
