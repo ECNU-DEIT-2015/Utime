@@ -1,5 +1,4 @@
-﻿/// <reference path="intellisense/jquery-1.2.6-vsdoc.js" />
-try { document.execCommand("BackgroundImageCache", false, true); } catch (e) { }
+﻿try { document.execCommand("BackgroundImageCache", false, true); } catch (e) { }
 var popUpWin;
 function PopUpCenterWindow(URLStr, width, height, newWin, scrollbars) {
     var popUpWin = 0;

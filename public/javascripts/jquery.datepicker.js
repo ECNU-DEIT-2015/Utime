@@ -1,5 +1,4 @@
-﻿/// <reference path="../intellisense/jquery-1.2.6-vsdoc-cn.js" />
-; (function($) {
+﻿(function($) {
     if (!dateFormat || typeof (dateFormat) != "function") {
         var dateFormat = function(format) {
             var o = {
