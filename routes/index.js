@@ -58,9 +58,9 @@ router.route('/reg')
 
         usr.insertFun(client,req.body.user_name ,req.body.user_psd, function (err) {
               if(err) throw err;
-              res.send('注册成功');
-              res.sendfile("./views/login.html");
-              //res.redirect('login');
+              //res.send('注册成功');
+              //res.sendfile("./views/login.html");
+              res.redirect('/login');
         });
     });
 
