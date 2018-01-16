@@ -1,0 +1,101 @@
+.detail{
+    height:640px;
+    background: #F0F1F0;
+    padding: 3em 0;
+ }
+ .detail .detail_l{
+    width:60%;
+    height:600px;
+    float:left;
+    padding:0;
+    margin-left: 60px;
+  /*  border:1px solid red;  */
+ }
+ .detail .detail_l .logo{
+    float:left;
+    margin:0;
+ }
+ .detail .detail_l .title{
+    float:left;
+    margin-top: 20px;
+    font-size: 35px;
+    color: #2F779B;
+ }
+ .detail .detail_r{
+    background-color: #E9E9E9;
+    float:right;
+    width: 30%;
+    margin-right: 40px;
+ }
+ .change{
+    color: #2F779B;
+    font-size:20px;
+    float:left;
+    margin-top:10px;
+    margin-left: 20px;
+ }
+ .login-form{
+    width: 100%;
+    margin: 2.5em auto;
+    padding-left: 20px;
+ }
+ .comp_pic{
+    float: left;
+    padding-top:20px;
+    padding-left: 20px;
+ }
+ .express{
+   float: left;
+   margin-top: 5px;
+   padding-left: 50px;
+   font-size: 35px;
+   color: #2F779B;
+   text-align: center;
+ }
+ .login-form input[type="text"], .login-form input[type="password"] {
+    outline: none;
+    font-size: 1em;
+    color: #000;
+    padding: .8em 1em;
+    margin: 0;
+    width: 80%;
+    border: none;
+    -webkit-appearance: none;
+    display: block;
+    background: rgba(255, 255, 255, 0.67);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px; 
+    border-radius: 3px;
+ }
+ .login-form p {
+    font-size: 1em;
+    margin: 1em 0 .5em;
+ }
+ .login-form input[type="checkbox"]{
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+ .login-form input[type="submit"]{
+    font-size: 1em;
+    color: #fff;
+    background: #A7D4DA;
+    border: 3px solid #A7D4DA;
+    outline: none;
+    cursor: pointer;
+    padding: .6em 1em;
+    -webkit-appearance: none;
+    width: 80%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px; 
+    border-radius: 3px;
+ }
+ .login-form input[type="submit"]:hover {
+    background: #fff;
+    color: #A7D4DA;
+    border-color: #A7D4DA;
+    transition: 0.5s all ;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+ }

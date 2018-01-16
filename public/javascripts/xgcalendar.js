@@ -1,19 +1,4 @@
-﻿/*
-* XgCalendar  v1.2.0.4
-* Base on jQuery 1.2.6+
-* http://xuanye.cnblogs.com/
-*
-* Copyright (c) 2009 Xuanye.wan
-* under the Apache License 2.0 
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Date: 2009-11-24 11:23
-* Author:假正经哥哥(xuanye)
-* Blog:http://xuanye.cnblogs.com/
-* Email:xuanye.wan@gmail.com 
-* Source:http://code.google.com/p/xgcalendar/
-*/
-(function($) {
+﻿(function($) {
     var __WDAY = new Array(i18n.xgcalendar.dateformat.sun, i18n.xgcalendar.dateformat.mon, i18n.xgcalendar.dateformat.tue, i18n.xgcalendar.dateformat.wed, i18n.xgcalendar.dateformat.thu, i18n.xgcalendar.dateformat.fri, i18n.xgcalendar.dateformat.sat);
     var __MonthName = new Array(i18n.xgcalendar.dateformat.jan, i18n.xgcalendar.dateformat.feb, i18n.xgcalendar.dateformat.mar, i18n.xgcalendar.dateformat.apr, i18n.xgcalendar.dateformat.may, i18n.xgcalendar.dateformat.jun, i18n.xgcalendar.dateformat.jul, i18n.xgcalendar.dateformat.aug, i18n.xgcalendar.dateformat.sep, i18n.xgcalendar.dateformat.oct, i18n.xgcalendar.dateformat.nov, i18n.xgcalendar.dateformat.dec);
 

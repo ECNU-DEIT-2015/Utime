@@ -1,5 +1,5 @@
 {
-  "name": "app",
+  "name": "Utime",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -7,12 +7,17 @@
   },
   "dependencies": {
     "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
     "cookie-parser": "^1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
+    "express-session": "latest",
+    "jQuery": "^1.7.4",
     "jade": "~1.11.0",
+    "jquery": "^3.2.1",
     "morgan": "~1.9.0",
     "multer": "^1.3.0",
+    "mysql": "latest",
     "serve-favicon": "~2.4.5"
   }
 }
