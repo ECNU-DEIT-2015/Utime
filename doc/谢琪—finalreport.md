@@ -22,6 +22,7 @@
 6.登录注册功能。注册登录与数据库的连接功能。
 >
 >最初原型设计图片
+>![contributorpng](https://github.com/ECNU-DEIT-2015/Utime/blob/master/doc/%E5%9B%BE%E7%89%871.png)
 >
    
 
@@ -660,7 +661,7 @@ app.use('/reg', routes);
 app.use('/home', routes);
 ```
 ```
-home.html中修改了一些代码，这里就不再粘贴了
+日历页面中修改了一些代码和逻辑，这里就不再粘贴了
 ```
   
 ## 我的活动量化
