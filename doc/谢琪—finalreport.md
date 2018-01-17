@@ -23,7 +23,7 @@
 >
 >最初原型设计图片
 >![contributorpng](https://github.com/ECNU-DEIT-2015/Utime/blob/master/doc/%E5%9B%BE%E7%89%871.png)
->
+>![contributorpng](https://raw.githubusercontent.com/ECNU-DEIT-2015/Utime/master/doc/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A1%E7%A8%BF.jpg)
    
 
 ## 设计的功能列表以及其完成情况
