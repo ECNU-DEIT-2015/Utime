@@ -21,7 +21,11 @@
 5.事件信息统计。以月为单位将所以事件展示出来。   
 6.登录注册功能。注册登录与数据库的连接功能。
 >
->最初原型设计图片
+>最初原型设计图片  
+>
+>![contributorpng](https://raw.githubusercontent.com/ECNU-DEIT-2015/Utime/master/doc/%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E8%AE%BE%E8%AE%A1%E7%A8%BF.jpg)
+>
+>![contributorpng](https://github.com/ECNU-DEIT-2015/Utime/blob/master/doc/%E5%9B%BE%E7%89%871.png)
 >
    
 
@@ -37,10 +41,15 @@
   登录注册功能。|谢琪、杨芙蓉|100%
 
 # 产品技术方案
-> 描述你们的产品创意的技术思路，服务器端如何，客户端如何。不少于500字,可以配图描述，不允许粘贴复制网络资源，需要自己描述。  
->我们用了node.js来实现服务器端。因为JavaScript实现日历与时间的功能比较方便，而dart上面虽然有日历的库tzolkin,但是使用时总是出现我们无法处理的问题，因此我们就选择了JavaScript，然后服务器端选用了node.js。
->node环境的安装。node环境安装和学习，同dart一样，我们对node环境和语法是陌生的，只是我们接触过JavaScript，相对于dart不那么陌生。   
-> **此部分每组同学之间不能相同**，你需要展现自己的理解。  
+> 
+>我们用了node.js来实现服务器端。因为JavaScript实现日历与时间的功能比较方便，而dart上面虽然有日历的库tzolkin,但是使用时总是出现我们无法处理的问题，因此我们就选择了JavaScript，然后服务器端选用了node.js。 
+>
+>node环境的安装。node环境安装和学习，同dart一样，我们对node环境和语法是陌生的，只是我们接触过JavaScript，相对于dart不那么陌生，我们可以从网络上找到同样的问题以及解决方案。下载npm 相应的包以及环境配置。感触比较深的就是我们需要灵活掌握cmd命令行语句。安装好node环境就相当于我们的电脑成为了我们应用的服务器。安装好之后，就设置路由实现页面的交互。
+>
+>前端代码。在原型设计好之后，就开始写前端代码。首先写的是注册登录的代码，因为我们的应用涉及到不同用户之间的联系，因此注册登录等不同用户的信息时比较重要的。设计好逻辑在写日程页面的时候，发现有些功能没法实现。随后我们借用了已有的日历代码，将其改造成我们需要的日历页面。里面涉及到代码本身的一些逻辑和设计，我们花了差不多3周的时间进行代码解读与改造，按需设计成我们的日程代码。
+>
+>与数据库的连接。与数据库的连接最初是登录与注册页面，现在可以实现注册写入数据库用户名和密码，登录只能登录已有用户进入到主页面。在日程写入上面，还需要设计合理的数据库，我们讨论出的数据库表的字段为user_name（主键）、时间发生日期、具体事件、事件发生提醒时间。一开始认为每个用户应该建立一个表，也就是需要使用非关系型数据库，如MongoDB，但老师给我们的数据库MySQL是关系型数据库MySQL，通过上面的方法也是可以实现的。    
+
 
 # 我在小组中的分工
 ### 组织本应用的全过程。我们差不多每两周讨论一下我们的进度与计划。我主要督促小伙伴，因为我们组只有两个成员，任务相对于较重。在功能实现上，我主要负责前端页面和逻辑设计以及对node.js的学习。
@@ -655,43 +664,33 @@ app.use('/reg', routes);
 app.use('/home', routes);
 ```
 ```
-home.html中修改了一些代码，这里就不再粘贴了
+日历页面中修改了一些代码和逻辑，这里就不再粘贴了
 ```
   
 ## 我的活动量化
 > 活动量化数据截止到2018-1-17,12:00.
->到诸如 https://github.com/DEIT2014/teamXexercise/graphs/contributors 这样的地址中（替换teamXexercise为你自己所在小组）查看你的活动状态,方法是：  
-![contributorpng](https://cloud.githubusercontent.com/assets/1710178/21607012/4f254246-d1ee-11e6-9eaf-4c9f21ccb572.png)
+>https://github.com/ECNU-DEIT-2015/Utime/graphs/contributors  
+![contributorpng](https://github.com/ECNU-DEIT-2015/Utime/blob/master/doc/Image%203.png)
 
->到诸如https://github.com/DEIT2014/team2exercise/issues 中查询你的issure状态，方法是
-![yourissue](https://cloud.githubusercontent.com/assets/1710178/21606985/1d1b7e28-d1ee-11e6-9baa-a822675d66d5.png)
+>https://github.com/ECNU-DEIT-2015/Utime/issuess 中查询你的issure状态，因为我们主要采用QQ线上讨论，issue没有内容。
 
->查询后作类似如下描述，即你做了多少次commit，修改增加了多少，修改删除了多少，做了多少次issues    
+ 
 
->  **姓名/学号/29 commits / 1,954 ++ / 669 --/10 issues/**  
+>  **谢琪/10154507107/20 commits / 239,324 ++ / 9,645 --**  
 
-## 我的issue活动
->在这里列出所有你参与的issue活动，包括你发起的问题，你回答的问题，你可以使用贴图展示，例子：
-![myissues](https://cloud.githubusercontent.com/assets/1710178/21607127/0b4ba550-d1ef-11e6-8e4c-9306ce07a7d4.png)
+## 我的issue活动（线上，非GitHub上）
+>1.原型设计。   
+>2.前端代码组织与安排。  
+>3.逻辑设计。   
+>4.node安装与学习。      
+>5.数据库的连接。
 
 
 # 我的自评
-> 请你对自己的工作进行自评。
+> 请你对自己的工作进行自评。  
+>虽然本课程在最后没有按照老师教学的语言dart进行写代码，但是我学会了如何学习与使用一门新语言。web语言可选的很多，在学期最后选择了通过老师讲解的方法学习node.js这门新语言。相比于其他同学可能有一定的捷径可走，但是在小组学习上面，我们一起学习，一起分享学习的内容，也是需要将代码一行一行学会一行一行写出来的。
+>
+>除了在语言学习上面，本门课交给我们的还有学会思考教育问题并解决。从最初项目的构想，到最后部分功能的实现，都是我们基于某个教育问题和教育现象所作的实践。大家也都从不同的视角发现问题与解决问题，真正感受到了作为教育技术学学生的思维角度。当然，我自己也希望可以通过新技术改变我们的教育问题，希望自己可以为教育技术的大战贡献自己的力量。  
+>
 > 如果用**一整天8小时**时间计算，你有信心再用多少天完成你未目前完成的功能？25天。
-
-# 关于打印md文档为pdf
->比部分是指导你如何打印你的这个文档为pdf文档的说明，不属于模板。
-- 下载按照有道云笔记，请自行搜索安装。
-- 打开软件后新建一个markdown文件，如图
-![newmdpng](https://cloud.githubusercontent.com/assets/1710178/21608376/192e708c-d1f7-11e6-870f-81c23f8e2bef.png)
-
-- 把你的markdown源文件放进去，并查看预览效果。如图
-![editmd](https://cloud.githubusercontent.com/assets/1710178/21608386/2898f0c4-d1f7-11e6-800b-5d73499dfd4c.png)
-
-- 在该文件列表上右键打印，如图。
-![printmd](https://cloud.githubusercontent.com/assets/1710178/21608392/2fc22be0-d1f7-11e6-88c8-5014ba28f24d.png)
-
-- 建议大家自行搜索按照foxit reader，它会带一个虚拟的pdf文件打印机，选择它就可以打印出pdf文档了，然后你就可以纸质版打印该pdf提交了。
-![print2pdf](https://cloud.githubusercontent.com/assets/1710178/21608409/39c50d4c-d1f7-11e6-8c2d-441e5f92a61f.png)
-
-- 各位自己设计打印一个封面。
+> 后期虽然没有一整天8小时的写的可能，但是我会花时间完善功能，尽量将我们的构想变成实践。
