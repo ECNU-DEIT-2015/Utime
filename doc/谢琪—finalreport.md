@@ -666,7 +666,7 @@ home.html中修改了一些代码，这里就不再粘贴了
 ## 我的活动量化
 > 活动量化数据截止到2018-1-17,12:00.
 >https://github.com/ECNU-DEIT-2015/Utime/graphs/contributors  
-![contributorpng](https://cloud.githubusercontent.com/assets/1710178/21607012/4f254246-d1ee-11e6-9eaf-4c9f21ccb572.png)
+![contributorpng](https://github.com/ECNU-DEIT-2015/Utime/blob/master/doc/Image%203.png)
 
 >https://github.com/ECNU-DEIT-2015/Utime/issuess 中查询你的issure状态，因为我们主要采用QQ线上讨论，issue没有内容。
 
