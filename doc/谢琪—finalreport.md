@@ -665,19 +665,21 @@ home.html中修改了一些代码，这里就不再粘贴了
   
 ## 我的活动量化
 > 活动量化数据截止到2018-1-17,12:00.
->到诸如 https://github.com/DEIT2014/teamXexercise/graphs/contributors 这样的地址中（替换teamXexercise为你自己所在小组）查看你的活动状态,方法是：  
+>https://github.com/ECNU-DEIT-2015/Utime/graphs/contributors  
 ![contributorpng](https://cloud.githubusercontent.com/assets/1710178/21607012/4f254246-d1ee-11e6-9eaf-4c9f21ccb572.png)
 
->到诸如https://github.com/DEIT2014/team2exercise/issues 中查询你的issure状态，方法是
-![yourissue](https://cloud.githubusercontent.com/assets/1710178/21606985/1d1b7e28-d1ee-11e6-9baa-a822675d66d5.png)
+>https://github.com/ECNU-DEIT-2015/Utime/issuess 中查询你的issure状态，因为我们主要采用QQ线上讨论，issue没有内容。
 
->查询后作类似如下描述，即你做了多少次commit，修改增加了多少，修改删除了多少，做了多少次issues    
+ 
 
->  **姓名/学号/29 commits / 1,954 ++ / 669 --/10 issues/**  
+>  **谢琪/10154507107/20 commits / 239,324 ++ / 9,645 --**  
 
-## 我的issue活动
->在这里列出所有你参与的issue活动，包括你发起的问题，你回答的问题，你可以使用贴图展示，例子：
-![myissues](https://cloud.githubusercontent.com/assets/1710178/21607127/0b4ba550-d1ef-11e6-8e4c-9306ce07a7d4.png)
+## 我的issue活动（线上，非GitHub上）
+>1.原型设计。   
+>2.前端代码组织与安排。  
+>3.逻辑设计。   
+>4.node安装与学习。
+>5.数据库的连接。
 
 
 # 我的自评
